@@ -1,0 +1,16 @@
+.CartWidget{
+    background-color: #1619c0;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    align-items: center;
+}
+.CartWidget-link{
+    color: #eee;
+    font-size: 24px;
+    transition: 0.1s;
+}
+.CartWidget-link:hover{
+    transform: scale(1.4);
+}
+
