@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './NavBar.css';
-import CartWidget from './CartWidget.js';
+import '../NavBar/NavBar.css';
+import CartWidget from '../Cart/CartWidget';
 
 const NavBar = () => {
 

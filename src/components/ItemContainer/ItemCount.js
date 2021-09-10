@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import Button from './Button.js';
-import Remera from '../assets/img/remera.png';
 
 import './ItemCount.css'
 
@@ -31,9 +30,7 @@ const ItemCount = () => {
     return (
 
         <div className="item-container">
-            <h2>Bienvenido al shop de Tienda Blu</h2>
          <div className="item-stock">
-              <img src={Remera} alt="Remera deportiva hombre" className="item-img"/>
               <h3>Remera deportiva azul</h3>
             <div className="item-contador">
               <Button function={decrementar} className="btn-red" label="-">-</Button>
