@@ -3,7 +3,7 @@ import Button from './Button.js';
 
 import './ItemCount.css'
 
-const ItemCount = () => {
+const ItemCount = ({stock, setCartItem}) => {
     const stock = 10;
     const [count, setCount] = useState(0);
 
@@ -38,7 +38,7 @@ const ItemCount = () => {
               <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
             <p>{count >= 10 ? 'Stock Maximo' : ''}</p>
-              <Button function={addToCart} className="btnAddCart" label='Agregar al carrito' ></Button>
+              <Button onClick={() => setCartItem(count)} className="btnAddCart" label='Agregar al carrito' ></Button>
          </div>
              
               

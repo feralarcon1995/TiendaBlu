@@ -3,7 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import '../NavBar/NavBar.css';
 import CartWidget from '../Cart/CartWidget';
 
-const NavBar = () => {
+const NavBar = ({cartItem}) => {
 
     return (
         <nav className="Menu">
@@ -21,7 +21,7 @@ const NavBar = () => {
             <input type="text" id="header-search" placeholder="Buscar " className="Menu-input" />
                 <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
             </div>
-            <CartWidget/>
+            <CartWidget cartItem={cartItem}/>
           </nav>
             )
 
