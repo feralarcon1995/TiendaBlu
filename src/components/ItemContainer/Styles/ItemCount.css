@@ -31,6 +31,7 @@
 .item-contador{
     display: flex;
     flex-direction: row;
+    padding: 5px;
 }
 .itemCount{
     padding: 0px 20px;
@@ -42,14 +43,7 @@
     height: 200px;
 }
 
-.btnAddCart{
-    width: 90%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #00aeff ;
-    color: #00aeff;
-    margin-top: 10px;
-}
+
 
 .btn-red{
     background-color: #ff0000;

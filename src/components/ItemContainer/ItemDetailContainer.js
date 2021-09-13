@@ -21,18 +21,20 @@ const ItemDetailContainer = ({setCartItem}) => {
            const dress = getItems();
 
            dress
-           .then((dress) => setListDress(dress)).catch((err) => console.log(err), [])
+           .then((dress) => setListDress(dress)).catch((err) => console.log(err))
 
            setLoader(false)
         }, 3000)
 
-    })
+    }, [])
+
     return(
         <div>
-             <div>
-                 <h2>Detalles del producto</h2>
-             </div>
-           <div>
+             <div className="TiendaContainer">
+           <h2 className="TiendaTitulo">Detalles del Producto</h2>
+           <hr className="TiendaHr"/>
+        </div>
+           <div className="ItemListDetail">
                {Loader == true ? <Loading/> : listDress.map((item) => (<ItemDetail
                  id={item.id}
                  item ={item}

@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemContainer/ItemDetailContainer';
 
+
 function App() {
 
   const [stock, setStock] = useState(0);
@@ -13,12 +14,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar/>
+        <NavBar cartItem={cartItem} />
       </header>
-      <div>
       <ItemListContainer setCartItem={setCartItem}/>
       <ItemDetailContainer setCartItem={setCartItem}/>
-      </div>
+
+
     </div>
   );
 }

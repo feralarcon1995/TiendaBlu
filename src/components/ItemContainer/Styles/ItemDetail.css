@@ -1,0 +1,89 @@
+.ItemListDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #eee;
+    padding: 30px;
+}
+
+.ItemContainerDetail{
+    display: flex;
+    flex-direction: row;
+justify-content: space-around; 
+   padding:20px;
+    margin: 0 auto;
+    width: 60%;
+    background-color: #fff;
+    box-shadow: 4px 4px 5px 0px rgba(147,147,147,0.75);
+    transition: .3s;
+}
+.ItemContainer:hover{
+    transform: scale(1.05);
+}
+.ItemContainerDetail img{
+    width: 250px;
+    height: 250px;
+    align-self: center;
+
+}
+.ItemContenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.ItemDetail{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   
+}
+
+.ItemDetail span{
+    color:#b3b3b3;
+    text-decoration: line-through;
+    font-size: 14px;
+     
+}
+
+.btnAddCart{
+    width: 100%;
+    height: 40px;
+    align-self: center;
+    margin: 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    transition: 1s;
+    cursor: pointer;
+}
+.btnAddCart:hover{
+    background-color: #f1f1f1;
+}
+
+.btn-red{
+    background-color: #ff0000;
+    color: #eee;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.btn-red:hover{
+    background-color: #d81313;
+
+}
+
+.btn-blue{
+    background-color: #00aeff;
+    color: #eee;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.btn-blue:hover{
+    background-color: #1b89bd;
+
+}

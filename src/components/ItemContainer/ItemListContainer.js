@@ -1,7 +1,5 @@
 import ImgRunning from '../../assets/img/running.jpg';
 import ItemList from '../ItemContainer/ItemList';
-
-
 import '../ItemContainer/Styles/ItemListContainer.css';
 
 const ItemListContainer = ({setCartItem}) => {
@@ -21,7 +19,6 @@ const ItemListContainer = ({setCartItem}) => {
         <ItemList setCartItem={setCartItem}/>
     </div>
     
- 
 </div>
     )
 }

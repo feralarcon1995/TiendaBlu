@@ -108,18 +108,18 @@ const ItemList = ({setCartItem}) => {
    
          dress.then(dress => {
           setListDress(dress)
-         }, [])
+         })
 
          setLoader(false)
         }, 3000);
       
-    })
+    }, [])
 
     return (
       <div >
         <div className="TiendaContainer">
-                      <h2 className="TiendaTitulo">Bienvenido al shop de Tienda Blu</h2>
-                      <hr className="TiendaHr"/>
+           <h2 className="TiendaTitulo">Bienvenido al shop de Tienda Blu</h2>
+           <hr className="TiendaHr"/>
         </div>
         <div className="ItemList">
           {Loader==true ? 
@@ -128,7 +128,6 @@ const ItemList = ({setCartItem}) => {
                  }
         </div>
             
-          
       </div>
     )
 }

@@ -1,30 +1,21 @@
 import {useState} from 'react';
-import Button from './Button.js';
+import Button from '../Button/Button';
 
-import './ItemCount.css'
+import './Styles/ItemCount.css'
 
 const ItemCount = ({stock, setCartItem}) => {
-    const stock = 10;
+    
     const [count, setCount] = useState(0);
 
     const aumentar = () => {
-        if (count >= stock){
-           console.log('ya no sumo mas')
-        }
-        else {
-            setCount(count + 1);
+        if (count === stock){
+            return setCount(count + 1);
         }
     }
     const decrementar = () => {
-        if (count <= 0){
-            console.log('no hago nada')
-        }
-         else{
-             setCount(count - 1);
-         }
-    }
-    const addToCart = () => {
-        console.log('agregar al carrito')
+        if (count === 0){
+            return setCount(count - 1);
+        }  
     }
 
     return (
@@ -37,8 +28,8 @@ const ItemCount = ({stock, setCartItem}) => {
               <p className="itemCount">{count}</p>
               <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
-            <p>{count >= 10 ? 'Stock Maximo' : ''}</p>
-              <Button onClick={() => setCartItem(count)} className="btnAddCart" label='Agregar al carrito' ></Button>
+            <p>{count >= stock ? 'Stock Maximo' : ''}</p>
+              <Button function={() => setCartItem(count)} className="btnAddCart" label='Agregar al carrito' ></Button>
          </div>
              
               
