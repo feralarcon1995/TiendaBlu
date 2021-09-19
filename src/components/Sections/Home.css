@@ -1,0 +1,46 @@
+.contenedor-ventas{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    background-image: url('../../assets/img/fondo.jpg');
+    background-size: cover;
+    padding: 30px;
+}
+.contenedor-subtitulo{
+    color: #232323;
+    font-size: 32px;
+    padding:10px;
+    text-transform: uppercase;
+}
+.contenedor-infoHome{
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    background-color: #2f0e7c63;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-start;
+}
+.contenedor-ventas hr{
+    width: 10%;
+    height: 3px;
+    background-color: #232323;
+    align-self: center;
+    margin-bottom: 10px;
+}
+.contenedor-btn{
+    width: 13rem;
+    height: 3.125rem;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color:#1619c0;
+    border: 2px solid #1619c0;
+    transition: 1s;
+    background: transparent;
+}
+.contenedor-btn:hover{
+    transform: scale(1.05);
+}

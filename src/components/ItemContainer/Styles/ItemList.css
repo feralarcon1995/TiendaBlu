@@ -3,7 +3,6 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #eee;
     padding: 30px;
 }
 
@@ -60,12 +59,13 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background: #eee;
     padding: 30px;
+    height: auto;
 }
 .TiendaTitulo{
     color: #232323;
     font-size: 32px;
+    text-transform: uppercase;
 }
 .TiendaHr{
     width: 10%;

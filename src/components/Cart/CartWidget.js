@@ -3,12 +3,12 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './CartWidget.css';
 
 
-const CartWidget = ({cartItem}) => {
+const CartWidget = ({ cartItem }) => {
 
     return (
         <div className="CartWidget">
-                <a href="" className="CartWidget-link" > <FontAwesomeIcon icon={faShoppingCart} /></a>
-                <span>{cartItem}</span>
+            <FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" />
+            <span>{cartItem}</span>
         </div>
     )
 }

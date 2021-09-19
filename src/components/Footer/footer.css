@@ -1,0 +1,71 @@
+.footerContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+}
+.footerInfo{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #eee;
+    padding: 50px;
+
+}
+.footerSocial h3{
+    color:#1619c0;
+    padding: 10px 0px;
+}
+
+.suscriter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.suscriter button{
+    background-color: #1619c0;
+    color:#eee;
+    border: none;
+    padding:10px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.suscriter button:hover{
+    background-color:   #0004ff;
+
+}
+.suscriter input{
+    outline: none;
+    background-color: transparent;
+    color:#eee;
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid #1619c0;
+    margin:20px 0px;
+
+}
+
+.footerCreator{
+    background-color: #1619c0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    word-spacing: 10px;
+    
+}
+
+.footerCreator h2{
+    color:#ccc;
+    font-size: 16px;
+}
+
+.footerCreator a{
+    text-decoration: none;
+    color: #232323;
+    transition: 0.1s;
+}
+
+.footerCreator a:hover{
+   color:#ccc;
+}

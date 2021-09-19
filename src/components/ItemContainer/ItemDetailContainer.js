@@ -1,49 +1,54 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemContainer/ItemDetail';
-import {Indumentaria} from '../ItemContainer/ItemList';
+import { Indumentaria } from '../ItemContainer/ItemList';
 import Loading from '../Loading/Loading';
 
 
-function getItems (){
-    return new Promise ((resolve,reject) => {
-      resolve(Indumentaria)
-    })
+function getItems() {
+  return new Promise((resolve, reject) => {
+    resolve(Indumentaria)
+  })
 }
-const ItemDetailContainer = ({setCartItem}) => {
+const ItemDetailContainer = () => {
 
-    const [Loader, setLoader] = useState(true);
+  const [Loader, setLoader] = useState(true);
 
-    const [listDress, setListDress] = useState([]);
+  const { itemId } = useParams();
 
-    useEffect(() => {
+  const [product, setProduct] = useState(null);
 
-        setTimeout(() => {
-           const dress = getItems();
 
-           dress
-           .then((dress) => setListDress(dress)).catch((err) => console.log(err))
+  useEffect(() => {
 
-           setLoader(false)
-        }, 3000)
+    setTimeout(() => {
+      const dress = getItems();
+       
+      dress
+        .then(res => {
+          setProduct(res.find(prod => prod.itemId === itemId))
+        })
+        .catch(err => console.log(err))
+        .finally(() => {
+          //UNA VEZ PASADO LOS 2 SEGUNDOS, EL LOADER DESAPARECE
+          setLoader(false)
+        })           
 
-    }, [])
+    }, 2000)
+  }, [itemId])
 
-    return(
-        <div>
-             <div className="TiendaContainer">
-           <h2 className="TiendaTitulo">Detalles del Producto</h2>
-           <hr className="TiendaHr"/>
-        </div>
-           <div className="ItemListDetail">
-               {Loader == true ? <Loading/> : listDress.map((item) => (<ItemDetail
-                 id={item.id}
-                 item ={item}
-                 setCartItem={setCartItem}
-               />))}
-           </div>
+  return (
+    <div>
+      <div className="TiendaContainer">
+        <h2 className="TiendaTitulo">Detalles del Producto</h2>
+        <hr className="TiendaHr" />
+      </div>
+      <div className="ItemListDetail">
+        {Loader === true ? <Loading /> : <ItemDetail {...product}/>}
+      </div>
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default ItemDetailContainer

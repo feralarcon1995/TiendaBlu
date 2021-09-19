@@ -5,54 +5,63 @@
     justify-content: space-between;
     
 }
+.Menu a {
+    text-decoration: none;
+}
 .Menu-titulo{
     color: #eee;
     font-size: 24px;
     padding: 24px;
+    text-decoration: none;
 
 }
 .Menu-item{
     display:flex;
     flex-direction: row;
     justify-content: center;
+    width: 75%;
     
 }
-.Menu-item ul{
+.Menu-item .menu-lista{
     display:flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
-.Menu-item ul li{
+.Menu-item .menu-lista li{
     list-style: none;
-    padding-left: 20px;
+    position: relative;
+    width: 100%;
     align-self: center;
+    padding: 10px;
+}
+
+
+.sub-menu{
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        background: #232323;
+        z-index: 1;
+        width: 100%;
+
+}
+.menu-lista li:hover .sub-menu{
+
+    display: flex;
+    flex-direction: column;
 }
 .Menu-link{
-    color: #eee;
+    color: #f0e8e8;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-decoration: none;
+    text-transform: uppercase;
     transition: 0.1s;
 }
 
 .Menu-link:hover{
     color: #1619c0;
 }
-.Menu-search{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-}
-.Menu-search button {
-    width: 30px;
-    height: 25px;
-    background-color: #1619c0;
-    color: #eee;
-    border: none;
-}
-.Menu-input{
-    width: 100%;
-    height: 25px;
-}
+

@@ -1,4 +1,7 @@
-
+.tienda-contenedor{
+    background-image: url('../../../assets/img/fondo.jpg');
+    background-size: cover;
+}
 .contenedor-principal{
     display:flex;
     flex-direction: column;
@@ -7,14 +10,15 @@
     
     
 }
-.contenedor-info{
-    clip-path: polygon(0 0, 100% 0%, 70% 100%, 0% 100%);
+.contenedor-infoTienda{
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
     background-color: #2f0e7c63;
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: flex-end;
 }
 .contenedor-titulo{
     font-size: 30px;
@@ -22,6 +26,7 @@
     padding: 100px;
     align-self: center;
     color: #eee;
+    text-transform: uppercase;
 }
 
 .contenedor-principal a{

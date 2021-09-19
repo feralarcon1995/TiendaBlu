@@ -1,26 +1,44 @@
 
-import {useState} from 'react'
+import { useState } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import Home from './components/Sections/Home';
 import ItemListContainer from './components/ItemContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemContainer/ItemDetailContainer';
+import Footer from './components/Footer/Footer';
 
 
-function App() {
+function App({itemId}) {
 
-  const [stock, setStock] = useState(0);
+  // const [stock, setStock] = useState(0);
   const [cartItem, setCartItem] = useState(0);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <BrowserRouter>
         <NavBar cartItem={cartItem} />
-      </header>
-      <ItemListContainer setCartItem={setCartItem}/>
-      <ItemDetailContainer setCartItem={setCartItem}/>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/tienda">
+            <ItemListContainer setCartItem={setCartItem} />
+          </Route>
+          <Route exact path='/tienda/categoria/:catId'>
+            <ItemListContainer />
+          </Route>
+          <Route exacy path='/tienda/detalle/:itemId'>
+            <ItemDetailContainer/>
+          </Route>
+          <Route path="*">
+              <Redirect to="/"/>
+          </Route>
+        </Switch>
+        <Footer />
+      </BrowserRouter>
 
-
-    </div>
+    </>
   );
 }
 

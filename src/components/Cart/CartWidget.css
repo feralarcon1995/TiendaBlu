@@ -1,7 +1,8 @@
 .CartWidget{
     background-color: #1619c0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    color: #eee;
     width: 120px;
     align-items: center;
 }
