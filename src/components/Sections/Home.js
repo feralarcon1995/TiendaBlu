@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import ImgRunning from '../../assets/img/running.jpg';
-import { Indumentaria } from '../ItemContainer/ItemList';
+import { products } from '../ItemContainer/ItemListContainer';
 import Item from '../ItemContainer/Item';
 import Loading from '../Loading/Loading';
 import './Home.css'
-const Home = ({ item }) => {
+const Home = ({ product }) => {
   const [Loader, setLoader] = useState(true);
 
-  const bestSeller = Indumentaria.slice(0, 3);
+  const bestSeller = products.slice(0, 3);
 
   useEffect(() => {
     setTimeout(() => {
@@ -36,7 +36,7 @@ const Home = ({ item }) => {
         <div className="ItemList">
           {Loader === true ?
             <Loading /> :
-            bestSeller.map((item) => <Item id={item.id} item={item} />)
+            bestSeller.map((product) => <Item product={product} key={product.id} />)
           }
         </div>
 

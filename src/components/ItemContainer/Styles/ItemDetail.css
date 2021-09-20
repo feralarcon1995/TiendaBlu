@@ -1,9 +1,12 @@
+.tienda-contenedor{
+    background-image: url('../../../assets/img/fondo.jpg');
+    background-size: cover;
+}
 .ItemListDetail{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #eee;
     padding: 30px;
 }
 .ItemDescripcion {
@@ -46,6 +49,10 @@
     width: 100%;
    
 }
+.ItemDetail span{
+    color:#b3b3b3;
+    font-size: 14px;
+}
 
 .ItemDetailNombre{
     font-size: 36px;
@@ -53,7 +60,12 @@
     text-transform: uppercase;
 }
 
-
+select {
+    width: 60%;
+    height: 30px;
+    background-color: #1619c0;
+    color: #eee;
+}
 .ItemDetailMaterial{
     font-size: 14px;
 }
@@ -102,6 +114,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        width: 40%;
     
 }
 

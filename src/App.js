@@ -9,10 +9,11 @@ import ItemDetailContainer from './components/ItemContainer/ItemDetailContainer'
 import Footer from './components/Footer/Footer';
 
 
-function App({itemId}) {
+function App() {
 
   // const [stock, setStock] = useState(0);
   const [cartItem, setCartItem] = useState(0);
+
 
   return (
     <>
@@ -29,7 +30,7 @@ function App({itemId}) {
             <ItemListContainer />
           </Route>
           <Route exacy path='/tienda/detalle/:itemId'>
-            <ItemDetailContainer/>
+            <ItemDetailContainer setCartItem={setCartItem}/>
           </Route>
           <Route path="*">
               <Redirect to="/"/>

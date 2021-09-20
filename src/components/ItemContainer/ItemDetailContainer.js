@@ -1,32 +1,33 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemContainer/ItemDetail';
-import { Indumentaria } from '../ItemContainer/ItemList';
+import { products } from '../ItemContainer/ItemListContainer';
 import Loading from '../Loading/Loading';
 
 
 function getItems() {
   return new Promise((resolve, reject) => {
-    resolve(Indumentaria)
+    resolve(products)
   })
 }
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({setCartItem}) => {
 
   const [Loader, setLoader] = useState(true);
 
   const { itemId } = useParams();
 
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
 
 
   useEffect(() => {
 
     setTimeout(() => {
-      const dress = getItems();
-       
+      const dress = getItems(itemId);
+      
+
       dress
-        .then(res => {
-          setProduct(res.find(prod => prod.itemId === itemId))
+        .then(products => {
+          setProduct(products.find(prod => prod.id === itemId))
         })
         .catch(err => console.log(err))
         .finally(() => {
@@ -35,16 +36,16 @@ const ItemDetailContainer = () => {
         })           
 
     }, 2000)
-  }, [itemId])
+  }, [itemId,product])
 
   return (
-    <div>
+    <div className="tienda-contenedor">
       <div className="TiendaContainer">
         <h2 className="TiendaTitulo">Detalles del Producto</h2>
         <hr className="TiendaHr" />
       </div>
       <div className="ItemListDetail">
-        {Loader === true ? <Loading /> : <ItemDetail {...product}/>}
+        {Loader === true ? <Loading /> : <ItemDetail products={product } setCarItem={setCartItem} />}
       </div>
 
     </div>
