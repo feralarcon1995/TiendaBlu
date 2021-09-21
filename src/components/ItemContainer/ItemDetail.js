@@ -1,33 +1,10 @@
-import { useState } from "react";
-import Button from "../Button/Button";
 import './Styles/ItemDetail.css'
 import './Styles/ItemCount.css'
+import ItemCount from '../ItemContainer/ItemCount';
 
-const ItemDetail = ({  setCartItem,products}) => {
+const ItemDetail = ({ setCartItem,products}) => {
 
     
-
-    const [count, setCount] = useState(0);
-    
-
-    const aumentar = () => {
-        if (count >= products?.stock) {
-            console.log('ya no sumo mas')
-        }
-        else {
-            setCount(count + 1);
-        }
-
-    }
-    const decrementar = () => {
-        if (count <= 0) {
-            console.log('no hago nada')
-        }
-        else {
-            setCount(count - 1);
-        }
-
-    }
     return (
         <div>
             <div className="ItemContainerDetail">
@@ -38,8 +15,8 @@ const ItemDetail = ({  setCartItem,products}) => {
                         <h3 className="ItemDetailNombre">{products?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
                         <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
-                        <select>
-                            <option selected value="">Selecciona Un Talle</option>
+                        <select defaultValue={'DEFAULT'} >
+                            <option value="DEFAULT" disabled>Selecciona Un Talle</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
@@ -47,14 +24,8 @@ const ItemDetail = ({  setCartItem,products}) => {
                             <option value="XLL">XXL</option>
                         </select>
                         {/* ITEM BOTON CONTADOR */}
-                        <div className="item-contador">
-                            <Button function={decrementar} className="btn-red" label="-">-</Button>
-                            <p className="itemCount">{count}</p>
-                            <Button function={aumentar} className="btn-blue" label="+">+</Button>
-                        </div>
+                        <ItemCount setCartItem={setCartItem} products={products}/>
                         <p className="ItemDetail">Stock Disponible : {products?.stock}</p>
-                        <p className="ItemDetail">{count >= products?.stock ? 'Stock Maximo' : ''}</p>
-                        <Button function={() => setCartItem(count)} className="btnAddCart" label='Agregar al carrito' ></Button>
                     </div>
 
                 </div>
@@ -75,6 +46,9 @@ const ItemDetail = ({  setCartItem,products}) => {
 
     )
 
-}
+
+    }
+   
+
 
 export default ItemDetail

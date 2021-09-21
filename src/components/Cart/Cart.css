@@ -1,0 +1,25 @@
+.cart{
+    background-image: url('../../assets/img/fondo.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-titulo{
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.cart hr{
+    width: 10%;
+    height: 3px;
+    background-color: #232323;
+    align-self: center;
+    margin-bottom: 10px;
+}

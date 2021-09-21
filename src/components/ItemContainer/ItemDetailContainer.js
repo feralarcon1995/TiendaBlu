@@ -45,7 +45,7 @@ const ItemDetailContainer = ({setCartItem}) => {
         <hr className="TiendaHr" />
       </div>
       <div className="ItemListDetail">
-        {Loader === true ? <Loading /> : <ItemDetail products={product } setCarItem={setCartItem} />}
+        {Loader === true ? <Loading /> : <ItemDetail products={product } setCartItem={setCartItem} />}
       </div>
 
     </div>

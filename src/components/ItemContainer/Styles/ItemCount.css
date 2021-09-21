@@ -1,13 +1,21 @@
 .item-container{
     display:flex;
-    flex-direction: column;
-    background-color: #232323;
-    width: 100%;
-    height:auto;
+    flex-direction: row;
     justify-content: space-around;
-    padding: 30px;
 }
-.item-container h2{
+.item-contador{
+    display: flex;
+    flex-direction: row;
+    padding:5px;
+    cursor: pointer;
+
+}
+.itemCount{
+    padding: 0px 20px;
+    align-self: center;
+   
+}
+/*.item-container h2{
     color: #eee;
     align-self: center;
     padding: 20px;
@@ -28,11 +36,7 @@
     font-size: 20px;
     padding: 10px;
 }
-.item-contador{
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-}
+
 .itemCount{
     padding: 0px 20px;
     align-self: center;
@@ -42,7 +46,7 @@
     width: 200px;
     height: 200px;
 }
-
+ */
 
 
 .btn-red{
