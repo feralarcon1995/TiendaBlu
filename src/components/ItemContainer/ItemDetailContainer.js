@@ -10,7 +10,7 @@ function getItems() {
     resolve(products)
   })
 }
-const ItemDetailContainer = ({setCartItem}) => {
+const ItemDetailContainer = ({ setCartItem }) => {
 
   const [Loader, setLoader] = useState(true);
 
@@ -22,8 +22,8 @@ const ItemDetailContainer = ({setCartItem}) => {
   useEffect(() => {
 
     setTimeout(() => {
+
       const dress = getItems(itemId);
-      
 
       dress
         .then(products => {
@@ -33,10 +33,10 @@ const ItemDetailContainer = ({setCartItem}) => {
         .finally(() => {
           //UNA VEZ PASADO LOS 2 SEGUNDOS, EL LOADER DESAPARECE
           setLoader(false)
-        })           
+        })
 
     }, 2000)
-  }, [itemId,product])
+  }, [itemId, product])
 
   return (
     <div className="tienda-contenedor">
@@ -45,7 +45,7 @@ const ItemDetailContainer = ({setCartItem}) => {
         <hr className="TiendaHr" />
       </div>
       <div className="ItemListDetail">
-        {Loader === true ? <Loading /> : <ItemDetail products={product } setCartItem={setCartItem} />}
+        {Loader === true ? <Loading /> : <ItemDetail products={product} />}
       </div>
 
     </div>

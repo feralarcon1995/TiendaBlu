@@ -6,10 +6,11 @@
     width: 120px;
     align-items: center;
 }
-.CartWidget-link{
+.CartWidget-link, .CartWidget span{
     color: #eee;
     font-size: 24px;
     transition: 0.1s;
+    text-decoration: none;
 }
 
 

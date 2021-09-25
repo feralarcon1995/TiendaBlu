@@ -1,9 +1,29 @@
 import './Styles/ItemDetail.css'
-import './Styles/ItemCount.css'
+import './Styles/ItemCount.css';
+import Button from '../Button/Button';
 import ItemCount from '../ItemContainer/ItemCount';
+import {useState, useContext} from 'react';
+import {Link} from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({ setCartItem,products}) => {
 
+const ItemDetail = ({products}) => {
+
+    const { addCart } = useContext(CartContext);
+   
+    const [valor,setValor] = useState('');
+
+    const getValue = (e) => {
+        setValor(e.target.value)
+        console.log(valor);
+    }
+    const onAddCart = (products,valor) => {
+
+        addCart({products,valor});
+        console.log(addCart)
+        
+     }
+ 
     
     return (
         <div>
@@ -15,7 +35,7 @@ const ItemDetail = ({ setCartItem,products}) => {
                         <h3 className="ItemDetailNombre">{products?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
                         <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
-                        <select defaultValue={'DEFAULT'} >
+                        <select onChange={getValue} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona Un Talle</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
@@ -24,8 +44,10 @@ const ItemDetail = ({ setCartItem,products}) => {
                             <option value="XLL">XXL</option>
                         </select>
                         {/* ITEM BOTON CONTADOR */}
-                        <ItemCount setCartItem={setCartItem} products={products}/>
+                        <ItemCount  products={products}/>
                         <p className="ItemDetail">Stock Disponible : {products?.stock}</p>
+                        <Link to={'/cart'}><Button function={onAddCart} className="btnAddCart" label='Agregar al carrito' ></Button></Link>
+
                     </div>
 
                 </div>

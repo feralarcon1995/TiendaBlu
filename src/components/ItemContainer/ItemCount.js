@@ -1,10 +1,8 @@
 import {useState} from 'react';
-import{Link} from 'react-router-dom';
 import Button from '../Button/Button';
+import './Styles/ItemCount.css';
 
-import './Styles/ItemCount.css'
-
-const ItemCount = ({ setCartItem,products}) => {
+const ItemCount = ({products}) => {
 
 
     const [count, setCount] = useState(0);
@@ -25,11 +23,7 @@ const ItemCount = ({ setCartItem,products}) => {
             setCount(count - 1);
         }
     }
-    const onAdd = () => {
-           setCartItem(count)
-           
-        }
-    
+ 
 
 
     return (
@@ -43,7 +37,6 @@ const ItemCount = ({ setCartItem,products}) => {
               <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
             <p>{count >= products?.stock ? 'Stock Maximo' : ''}</p>
-              <Link to={'/cart'}><Button function={onAdd} className="btnAddCart" label='Agregar al carrito' ></Button></Link>
          </div>
              
 
