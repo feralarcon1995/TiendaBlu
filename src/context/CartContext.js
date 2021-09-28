@@ -5,46 +5,54 @@ export const CartContext = createContext();
 
 
 export const CartProvider = ({ children }) => {
+    
+    const [carrito, setCarrito] = useState(undefined);
 
-    const [cart, setCart] = useState([]);
+    const [quantity, setQuantity] = useState(0);
 
-    //FUNCION QUE AGREGA CARRITO
-    const addCart = (products) => {
-        setCart([
-            ...cart,
-            products
-        ])
-    }
 
-    //FUNCION ELIMINAR PRODUCTO
-    const deleteProduct = (id) => {
-        setCart(cart.filter(products => products.id !== id))
-    }
+    //FUNCION BORRAR PRODUCTO
+    const deleteItem = (itemId) => {
+        const newList = carrito.filter((item) => item.id !== itemId);
+        setCarrito(newList);
+    };
 
-    //FUNCION ELEMENTOS DEL CARRITO
-    const numElemCart = () => {
-        return cart.reduce((suma, products) => suma + products.stock, 0)
-    }
+    //FUNCION CAMBIA CANTIDAD DE PRODUCTO
+    const changeQuantity = (count) => {
+        setQuantity(count);
+    };
 
-    //FUNCION VACIAR CARRITO
+    //FUNCION LIMPA CARRITO
     const clearCart = () => {
-        setCart([])
-    }
+        setCarrito(undefined);
+        setQuantity(0);
+    };
 
-    //FUNCION PARA NO DUPLICAR ELEMENTOS DEL CARRITO
-    const isInCart = (id) => {
-        return cart.some(element => element.id === id);
-    }
-
-    //FUNCION PARA CALCULAR PRECIO TOTAL
+    //FUNCION AGREGA AL CARRITO
+    const addProduct= (item, quantity) => {
+        
+        setCarrito(item, quantity);
+    };
+    
+    //FUNCION CALCULAR PRECIO TOTAL
     const precioTotal = () => {
-        return cart.reduce((acc, products) => acc + products.precio * products.cantidad, 0)
+        return carrito.reduce((acc, prod) => acc + prod.precio * prod.quantity, 0)
     }
-
-
     return (
-        <CartContext.Provider value={{ cart, addCart, deleteProduct, numElemCart, clearCart, isInCart, precioTotal }}>
+        <CartContext.Provider
+            value={{
+                carrito,
+                addProduct,
+                clearCart,
+                changeQuantity,
+                quantity,
+                deleteItem,
+                setCarrito,
+                precioTotal
+            }}>
+
             {children}
+
         </CartContext.Provider>
     )
 }

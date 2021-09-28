@@ -8,12 +8,12 @@ import './CartWidget.css';
 
 const CartWidget = () => {
 
-    const { numElemCart } = useContext(CartContext);
+    const { quantity } = useContext(CartContext);
     return (
         <div className="CartWidget">
             <Link to={'/cart'} >
                 <FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" />
-                <span> {numElemCart()} </span>
+                <span> {quantity} </span>
             </Link>
         </div>
     )

@@ -64,3 +64,13 @@
     margin: 10px;
     height: 200px;
 }
+
+.product-img img{
+
+    width: 200px;
+    height: auto;
+}
+
+.contenedorProducto{
+    width: 90%;
+}
