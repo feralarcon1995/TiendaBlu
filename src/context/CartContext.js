@@ -11,10 +11,12 @@ export const CartProvider = ({ children }) => {
     const [quantity, setQuantity] = useState(0);
 
 
+
     //FUNCION BORRAR PRODUCTO
     const deleteItem = (itemId) => {
         const newList = carrito.filter((item) => item.id !== itemId);
         setCarrito(newList);
+        setQuantity(quantity);
     };
 
     //FUNCION CAMBIA CANTIDAD DE PRODUCTO
@@ -29,7 +31,7 @@ export const CartProvider = ({ children }) => {
     };
 
     //FUNCION AGREGA AL CARRITO
-    const addProduct= (item, quantity) => {
+    const addProduct = (item, quantity) => {
         
         setCarrito(item, quantity);
     };
@@ -48,7 +50,7 @@ export const CartProvider = ({ children }) => {
                 quantity,
                 deleteItem,
                 setCarrito,
-                precioTotal
+                precioTotal,
             }}>
 
             {children}

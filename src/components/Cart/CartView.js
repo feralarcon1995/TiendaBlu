@@ -7,7 +7,7 @@ import './Cart.css'
 
 const CartView = () => {
 
-    const { carrito, clearCart,precioTotal } = useContext(CartContext);
+    const { carrito, clearCart, precioTotal,talleProduct } = useContext(CartContext);
 
 
     const ContenidoCarrito = () => {
@@ -17,21 +17,30 @@ const CartView = () => {
             <div className="cart">
                 <h2 className="cart-titulo">Sus compras</h2>
                 <hr />
+                <div className="producto-contenedor">
                 <div className="cart-contenedor">
                     {carrito.map((products) => (
                         <div key={products?.id} className="product-cart">
                             <ItemCheck
                                 products={products}
+                                talle={talleProduct}
                             />
                         </div>
                     ))}
-                    <div className="total-contenedor">
-                        <h3>Precio Total</h3>
+                    
+                </div>
+                <div className="total-contenedor">
+                        <h3>Precio Total de Compra</h3>
                         <p>$ {precioTotal()}</p>
                         <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
                     </div>
                 </div>
-                <Button function={clearCart} className="btn-delete" label="Eliminar todos los productos del carrito" />
+                <div className="btns">
+                <Link to={'/tienda'}> 
+                <Button  className="btn-seguir" label="Seguir Comprando" />
+                </Link>
+                <Button function={clearCart} className="btn-borrar" label="Limpiar Carrito" />
+                </div>
             </div>
         )
 
@@ -39,16 +48,24 @@ const CartView = () => {
 
     const CarritoVacio = () => {
 
-        return(
+        return (
 
-            <Link to={'/tienda'}><div className="oops"> </div></Link>
+            <div className="cart">
+                <h2 className="cart-titulo">Carrito Vacio</h2>
+                <hr />
+                <p className="cart-titulo">¿Porque no visitas nuestra tienda?</p>
+                <Link to={'/tienda'}>
+                    <Button className="contenedor-btn" label="Ir a Tienda" />
+                </Link>
+
+            </div>
 
         )
     }
 
     return (
-        <>  
-     {carrito ? <ContenidoCarrito /> : <CarritoVacio />}
+        <>
+            {carrito ? <ContenidoCarrito /> : <CarritoVacio />}
         </>
     )
 }

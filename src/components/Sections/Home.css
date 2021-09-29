@@ -40,6 +40,7 @@
     border: 2px solid #1619c0;
     transition: 1s;
     background: transparent;
+    margin-bottom: 20px;
 }
 .contenedor-btn:hover{
     transform: scale(1.05);

@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../NavBar/NavBar.css';
 import CartWidget from '../Cart/CartWidget';
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
-const NavBar = ({cartItem, item}) => {
+const NavBar = () => {
+
+    const { carrito } = useContext(CartContext);
 
     return (
     <header>
@@ -26,7 +30,8 @@ const NavBar = ({cartItem, item}) => {
 
                 </ul> 
             </div>
-            <CartWidget cartItem={cartItem}/>
+            { carrito ? <CartWidget /> : ''}
+            
           </nav>
     </header>
         

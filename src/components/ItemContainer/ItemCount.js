@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import './Styles/ItemCount.css';
 
@@ -20,6 +19,8 @@ const ItemCount = ({ products, initial, onAdd, setItemCount}) => {
         else {
             setCount(count + 1);
             changeQuantity(quantity + 1);
+
+
         }
     }
     const decrementar = () => {
@@ -58,7 +59,6 @@ const ItemCount = ({ products, initial, onAdd, setItemCount}) => {
             carrito
                 ? addProduct([...carrito, newProduct])
                 : addProduct([newProduct]);
-                console.log(carrito +'hola')
         }
 
 
@@ -77,8 +77,9 @@ const ItemCount = ({ products, initial, onAdd, setItemCount}) => {
                 <p className="itemCount">{count}</p>
                 <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
+            <p>Stock: {products?.stock}</p>
             <p>{count >= products?.stock ? 'Stock Maximo' : ''}</p>
-            <Link to={'/cart'}><Button function={onAddToCart} className="btnAddCart" label='Agregar al carrito' ></Button></Link>
+           <Button function={onAddToCart} className="btnAddCart" label='Agregar al carrito' ></Button>
 
         </div>
 

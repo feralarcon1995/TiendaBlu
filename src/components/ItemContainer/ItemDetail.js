@@ -2,7 +2,7 @@ import './Styles/ItemDetail.css'
 import './Styles/ItemCount.css';
 import Button from '../Button/Button';
 import ItemCount from '../ItemContainer/ItemCount';
-import { useState} from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -13,11 +13,12 @@ const ItemDetail = ({ products }) => {
 
     const [itemCount, setItemCount] = useState();
 
-    const [valor, setValor] = useState('');
+    const [talle, setTalle] = useState('');
 
-    const getValue = (e) => {
-        setValor(e.target.value)
-        console.log(valor);
+
+    const talleProduct = (e) => {
+        setTalle(e.target.value)
+        console.log(talle)
     }
 
     const handleOnAdd = () => {
@@ -33,9 +34,9 @@ const ItemDetail = ({ products }) => {
 
         return (
             <div>
-                <Button function={onClick} label="Volver"> </Button>
+                <Button function={onClick} label="Volver" className="btnAddCart"> </Button>
                 <Link to="/cart" className="link">
-                    <Button label="Finalizar Compra"></Button>
+                    <Button label="Finalizar Compra" className="btnAddCart"></Button>
                 </Link>
             </div>
         );
@@ -51,7 +52,7 @@ const ItemDetail = ({ products }) => {
                         <h3 className="ItemDetailNombre">{products?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
                         <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
-                        <select onChange={getValue} defaultValue={'DEFAULT'} >
+                        <select onChange={talleProduct()} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona Un Talle</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
