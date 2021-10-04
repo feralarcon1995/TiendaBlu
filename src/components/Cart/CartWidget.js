@@ -8,14 +8,21 @@ import './CartWidget.css';
 
 const CartWidget = () => {
 
-    const { quantity } = useContext(CartContext);
+    const { cantidadElementosDelCarrito } = useContext(CartContext);
     return (
-        <div className="CartWidget">
-            <Link to={'/cart'} >
-                <FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" />
-                <span> {quantity} </span>
-            </Link>
-        </div>
+
+        <>
+            {(cantidadElementosDelCarrito() !== 0)
+                ? <div className="CartWidget">
+                    <Link to="/cart">
+                        <FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" />
+                        <span>{cantidadElementosDelCarrito()}</span>
+                    </Link></div>
+                :
+                <p><FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" /></p>
+            }
+        </>
+
     )
 }
 

@@ -20,22 +20,24 @@
 
 .cart-contenedor {
     display        : flex;
-    flex-direction : column;
-    justify-content: space-around;
+    flex-direction : row;
+    justify-content: space-evenly;
+    flex-wrap      : wrap;
     width          : 100%;
     align-items    : center;
+
 }
 
 .total-contenedor {
     display        : flex;
-    flex-direction : column;
+    flex-direction : row;
     background     : #232323;
     justify-content: space-between;
     color          : #eee;
     align-items    : center;
-    width          : 88%;
+    width          : 55%;
     padding        : 20px;
-    height         : 200px;
+    height         : 80px;
 }
 
 .btn-compra {
@@ -72,13 +74,15 @@
 
 .product-cart {
     display         : flex;
-    flex-direction  : row;
+    flex-direction  : column;
     background-color: #eee;
     box-shadow      : 4px 4px 5px 0px rgba(147, 147, 147, 0.75);
-    width           : 90%;
+    width           : 30%;
     margin          : 10px;
-    height          : 200px;
+    height          : 100%;
     padding         : 10px;
+    align-content   : center;
+    align-items     : center;
 }
 
 .btn-borrar {
@@ -105,7 +109,7 @@
 
 .product-list {
     display        : flex;
-    flex-direction : row;
+    flex-direction : column;
     justify-content: space-around;
     width          : 90%;
 }
@@ -114,6 +118,12 @@
     display        : flex;
     flex-direction : column;
     justify-content: space-around;
+    padding        : 10px;
+}
+
+.product-hr {
+    width : 90%;
+    height: 2px;
 }
 
 .product-img {
@@ -123,7 +133,9 @@
 .product-price p {
     border-bottom: 2px solid #232323;
     align-self   : flex-start;
+    margin-bottom: 10px;
 }
+
 
 .product-img img {
     width : 200px;

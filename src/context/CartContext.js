@@ -10,14 +10,17 @@ export const CartProvider = ({ children }) => {
 
     const [quantity, setQuantity] = useState(0);
 
-
-
     //FUNCION BORRAR PRODUCTO
     const deleteItem = (itemId) => {
         const newList = carrito.filter((item) => item.id !== itemId);
         setCarrito(newList);
-        setQuantity(quantity);
     };
+
+    //FUNCION PARA LA CANTIDAD DE ELEMENTOS DEL CARRITO,TANTO PARA SUMAR COMO RESTAR
+    const cantidadElementosDelCarrito = () => {
+        return carrito.reduce((suma, product) => suma + product.quantity, 0)
+    }
+
 
     //FUNCION CAMBIA CANTIDAD DE PRODUCTO
     const changeQuantity = (count) => {
@@ -51,6 +54,7 @@ export const CartProvider = ({ children }) => {
                 deleteItem,
                 setCarrito,
                 precioTotal,
+                cantidadElementosDelCarrito 
             }}>
 
             {children}

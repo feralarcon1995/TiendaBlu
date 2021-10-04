@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import ItemCheck from './ItemCheck';
@@ -7,7 +7,7 @@ import './Cart.css'
 
 const CartView = () => {
 
-    const { carrito, clearCart, precioTotal,talleProduct } = useContext(CartContext);
+    const { carrito, clearCart, precioTotal, talleProduct, cantidadElementosDelCarrito } = useContext(CartContext);
 
 
     const ContenidoCarrito = () => {
@@ -17,30 +17,31 @@ const CartView = () => {
             <div className="cart">
                 <h2 className="cart-titulo">Sus compras</h2>
                 <hr />
-                <div className="producto-contenedor">
-                <div className="cart-contenedor">
-                    {carrito.map((products) => (
-                        <div key={products?.id} className="product-cart">
-                            <ItemCheck
-                                products={products}
-                                talle={talleProduct}
-                            />
-                        </div>
-                    ))}
-                    
-                </div>
                 <div className="total-contenedor">
-                        <h3>Precio Total de Compra</h3>
-                        <p>$ {precioTotal()}</p>
-                        <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
+                    <h3>Precio Total de Compra: </h3>
+                    <p>$ {precioTotal()}</p>
+                    <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
+                </div>
+
+                <div className="producto-contenedor">
+                    <div className="cart-contenedor">
+                        {carrito.map((products) => (
+                            <div key={products?.id} className="product-cart">
+                                <ItemCheck
+                                    products={products}
+                                    talle={talleProduct}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="btns">
-                <Link to={'/tienda'}> 
-                <Button  className="btn-seguir" label="Seguir Comprando" />
-                </Link>
-                <Button function={clearCart} className="btn-borrar" label="Limpiar Carrito" />
+                    <Link to={'/tienda'}>
+                        <Button className="btn-seguir" label="Seguir Comprando" />
+                    </Link>
+                    <Button function={clearCart} className="btn-borrar" label="Limpiar Carrito" />
                 </div>
+
             </div>
         )
 
@@ -65,7 +66,7 @@ const CartView = () => {
 
     return (
         <>
-            {carrito ? <ContenidoCarrito /> : <CarritoVacio />}
+            {(cantidadElementosDelCarrito() !== 0) ? <ContenidoCarrito /> : <CarritoVacio />}
         </>
     )
 }

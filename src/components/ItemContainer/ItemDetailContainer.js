@@ -1,42 +1,51 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemContainer/ItemDetail';
-import { products } from '../ItemContainer/ItemListContainer';
+// import { products } from '../ItemContainer/ItemListContainer';
+import { db } from '../../services/firebase/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 import Loading from '../Loading/Loading';
 
 
-function getItems() {
-  return new Promise((resolve, reject) => {
-    resolve(products)
-  })
-}
-const ItemDetailContainer = ({ setCartItem }) => {
+// function getItems() {
+//   return new Promise((resolve, reject) => {
+//     resolve(products)
+//   })
+// }
+const ItemDetailContainer = () => {
 
   const [Loader, setLoader] = useState(true);
 
-  const { itemId } = useParams();
+  const [product, setProduct] = useState(undefined);
 
-  const [product, setProduct] = useState([]);
-
+  const { itemid } = useParams();
 
   useEffect(() => {
 
-    setTimeout(() => {
+    setLoader(true)
 
-      const dress = getItems(itemId);
+    getDoc(doc(db, 'products', itemid)).then((querySnapshot) => {
 
-      dress
-        .then(products => {
-          setProduct(products.find(prod => prod.id === itemId))
-        })
-        .catch(err => console.log(err))
-        .finally(() => {
-          //UNA VEZ PASADO LOS 2 SEGUNDOS, EL LOADER DESAPARECE
-          setLoader(false)
-        })
+      console.log({ id: querySnapshot.id, ...querySnapshot.data() })
 
-    }, 2000)
-  }, [itemId, product])
+      const product = { id: querySnapshot.id, ...querySnapshot.data() }
+
+      setProduct(product)
+
+    }).catch((error) => {
+
+      console.log('Error al encontrar producto', error)
+
+    }).finally(() => {
+
+      setLoader(false)
+    })
+    return (() => {
+      
+      setProduct(undefined)
+    })
+  }, [itemid])
+
 
   return (
     <div className="tienda-contenedor">
@@ -45,7 +54,7 @@ const ItemDetailContainer = ({ setCartItem }) => {
         <hr className="TiendaHr" />
       </div>
       <div className="ItemListDetail">
-        {Loader === true ? <Loading /> : <ItemDetail products={product} />}
+        {Loader ? <Loading /> : <ItemDetail product={product} itemid={itemid} />}
       </div>
 
     </div>

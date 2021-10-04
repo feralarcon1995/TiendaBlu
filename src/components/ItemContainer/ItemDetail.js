@@ -35,6 +35,9 @@ const ItemDetail = ({ products }) => {
         return (
             <div>
                 <Button function={onClick} label="Volver" className="btnAddCart"> </Button>
+                <Link to="/tienda" className="link">
+                    <Button label="Seguir Comprando" className="btnAddCart"></Button>
+                </Link>
                 <Link to="/cart" className="link">
                     <Button label="Finalizar Compra" className="btnAddCart"></Button>
                 </Link>
@@ -52,7 +55,7 @@ const ItemDetail = ({ products }) => {
                         <h3 className="ItemDetailNombre">{products?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
                         <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
-                        <select onChange={talleProduct()} defaultValue={'DEFAULT'} >
+                        <select onChange={talleProduct} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona Un Talle</option>
                             <option value="S">S</option>
                             <option value="M">M</option>

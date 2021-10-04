@@ -2,20 +2,33 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import ImgRunning from '../../assets/img/running.jpg';
-import { products } from '../ItemContainer/ItemListContainer';
 import Item from '../ItemContainer/Item';
 import Loading from '../Loading/Loading';
-import './Home.css'
-const Home = ({ product }) => {
+import './Home.css';
+import { db } from '../../services/firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
+
+const Home = () => {
+
+  const [products, setProducts] = useState([]);
+
   const [Loader, setLoader] = useState(true);
 
   const bestSeller = products.slice(0, 3);
 
   useEffect(() => {
-    setTimeout(() => {
-      //UNA VEZ PASADO LOS 2 SEGUNDOS, EL LOADER DESAPARECE
+    setLoader(true)
+    getDocs(collection(db, 'products')).then((querySnapshot) => {
+      const products = querySnapshot.docs.map(doc => {
+        return { id: doc.id, ...doc.data() }
+      })
+      setProducts(products)
+    }).catch((error) => {
+      console.log('Error al encontrar productos', error)
+    }).finally(() => {
       setLoader(false)
-    }, 2000);
+    })
 
   }, [])
 
