@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext';
 const ItemCheck = ({ products }) => {
 
 
-    const { deleteItem  } = useContext(CartContext)
+    const { deleteItem,talle } = useContext(CartContext)
 
 
     return (
@@ -18,7 +18,8 @@ const ItemCheck = ({ products }) => {
                 <div className="product-info" >
                     <h3> {products?.nombre} </h3>
                     <h4> Unidades: {products?.quantity} </h4>
-                    <h5> Precio $ {products?.precio} </h5>                    
+                    <h5> Precio $ {products?.precio} </h5>       
+                    <p>Talle : {talle}</p>             
                 </div>
                 <hr className="product-hr"/>
                 <div className="product-price" >

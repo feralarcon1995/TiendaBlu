@@ -16,34 +16,41 @@ const ItemDetailContainer = () => {
 
   const [Loader, setLoader] = useState(true);
 
-  const [product, setProduct] = useState(undefined);
+  const [product, setProduct] = useState('');
 
   const { itemid } = useParams();
 
   useEffect(() => {
 
-    setLoader(true)
+    setTimeout(() => {
 
-    getDoc(doc(db, 'products', itemid)).then((querySnapshot) => {
+      setLoader(true)
 
-      console.log({ id: querySnapshot.id, ...querySnapshot.data() })
+      getDoc(doc(db, 'products', itemid)).then((productDocument) => {
 
-      const product = { id: querySnapshot.id, ...querySnapshot.data() }
+        // console.log({ id: productDocument.id, ...productDocument.data() })
 
-      setProduct(product)
+        const product = { id: productDocument.id, ...productDocument.data() }
 
-    }).catch((error) => {
+        setProduct(product)
 
-      console.log('Error al encontrar producto', error)
+      }).catch((error) => {
 
-    }).finally(() => {
+        console.log('Error al encontrar producto', error)
 
-      setLoader(false)
-    })
-    return (() => {
-      
-      setProduct(undefined)
-    })
+      }).finally(() => {
+
+        setLoader(false)
+      })
+
+      return (() => {
+
+        setProduct('')
+        console.log()
+      })
+
+    }, 2000)
+
   }, [itemid])
 
 

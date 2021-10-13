@@ -1,0 +1,103 @@
+.check-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/img/fondo.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.check{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.check-titulo{
+    color: #232323;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.check hr{
+    width: 10%;
+    height: 3px;
+    background-color: #232323;
+    align-self: center;
+    margin-bottom: 10px;
+}
+.check-formulario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 5px 0px rgba(147,147,147,0.75);
+    width: 90%;
+
+}
+.check-fondo{
+    background-image: url('../../assets/img/form.jpg');
+    background-size: cover;
+    height: 400px;
+    width: 70%;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    width: 100%;
+    height: 100%;
+}
+
+.inputField {
+    padding: 10px;
+    width: 50%;
+}
+.form-control{
+    width: 100%;
+    outline: none;
+    height: 30px;
+    padding: 10px;
+}
+
+.btn-enviar{
+    height: 35px;
+    width: 90%;
+    background-color: #1ec927;
+    color:#fff;
+    align-self: center;
+    cursor: pointer;
+    transition: .1s;
+}
+.btn-okey{
+    height: 35px;
+    width: 120px;
+    background-color: #1ec927;
+    color:#fff;
+    align-self: center;
+    cursor: pointer;
+    transition: .1s;
+}
+.btn-enviar:hover{
+    background-color: #19991f;
+}
+
+.btn-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 45%;
+}
+
+.delete{
+    background-color: #ff0000;
+}
+.delete:hover{
+    background-color: #cf0b0b;
+}

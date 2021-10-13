@@ -6,9 +6,17 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     
-    const [carrito, setCarrito] = useState(undefined);
+    const [carrito, setCarrito] = useState([]);
 
     const [quantity, setQuantity] = useState(0);
+
+    const [talle, setTalle] = useState('');
+
+    const talleProduct = (e) => {
+        setTalle(e.target.value)
+        console.log(talle)
+    }
+
 
     //FUNCION BORRAR PRODUCTO
     const deleteItem = (itemId) => {
@@ -29,7 +37,7 @@ export const CartProvider = ({ children }) => {
 
     //FUNCION LIMPA CARRITO
     const clearCart = () => {
-        setCarrito(undefined);
+        setCarrito([]);
         setQuantity(0);
     };
 
@@ -54,7 +62,9 @@ export const CartProvider = ({ children }) => {
                 deleteItem,
                 setCarrito,
                 precioTotal,
-                cantidadElementosDelCarrito 
+                cantidadElementosDelCarrito ,
+                talleProduct,
+                talle
             }}>
 
             {children}

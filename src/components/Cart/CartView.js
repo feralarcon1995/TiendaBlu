@@ -1,6 +1,7 @@
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+
 import ItemCheck from './ItemCheck';
 import Button from '../Button/Button';
 import './Cart.css'
@@ -8,7 +9,6 @@ import './Cart.css'
 const CartView = () => {
 
     const { carrito, clearCart, precioTotal, talleProduct, cantidadElementosDelCarrito } = useContext(CartContext);
-
 
     const ContenidoCarrito = () => {
 
@@ -20,7 +20,7 @@ const CartView = () => {
                 <div className="total-contenedor">
                     <h3>Precio Total de Compra: </h3>
                     <p>$ {precioTotal()}</p>
-                    <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
+                    <Link to={'/checkout'}><Button className="btn-compra" label="Comfirmar compra"></Button></Link>
                 </div>
 
                 <div className="producto-contenedor">
@@ -47,7 +47,7 @@ const CartView = () => {
 
     }
 
-    const CarritoVacio = () => {
+ const CarritoVacio = () => {
 
         return (
 
@@ -66,7 +66,7 @@ const CartView = () => {
 
     return (
         <>
-            {(cantidadElementosDelCarrito() !== 0) ? <ContenidoCarrito /> : <CarritoVacio />}
+            {(cantidadElementosDelCarrito() === 0) ? <CarritoVacio /> : <ContenidoCarrito />}
         </>
     )
 }

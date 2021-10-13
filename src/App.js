@@ -9,6 +9,7 @@ import ItemListContainer from './components/ItemContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemContainer/ItemDetailContainer';
 import CartView from './components/Cart/CartView';
 import Footer from './components/Footer/Footer';
+import BuyCheck from './components/Cart/BuyCheck';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path='/cart' >
               <CartView />
+            </Route>
+            <Route exact path='/checkout' >
+              <BuyCheck/>
             </Route>
             <Route path="*">
               <Redirect to="/" />

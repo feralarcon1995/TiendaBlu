@@ -19,7 +19,7 @@ const CartWidget = () => {
                         <span>{cantidadElementosDelCarrito()}</span>
                     </Link></div>
                 :
-                <p><FontAwesomeIcon icon={faShoppingCart} className="CartWidget-link" /></p>
+                ' '
             }
         </>
 
