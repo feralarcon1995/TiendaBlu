@@ -52,3 +52,13 @@ transform:scale(1.04);
     justify-content: center;
     padding: 30px;
 }
+
+@media only screen and (min-width: 320px) and (max-width:480px){
+
+    .contenedor-infoTienda{
+        width: 100%;
+    }
+    .TiendaTitulo{
+        text-align: center;
+    }
+}

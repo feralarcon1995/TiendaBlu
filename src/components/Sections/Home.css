@@ -45,3 +45,14 @@
 .contenedor-btn:hover{
     transform: scale(1.05);
 }
+
+/* RESPONSIBLE CELULAR */
+@media only screen and (min-width: 320px) and (max-width:480px){
+
+.contenedor-infoHome{
+    width: 100%;
+}
+.contenedor-subtitulo{
+    text-align: center;
+}
+}

@@ -1,67 +1,87 @@
-.Menu{
+.Menu {
     background-color: #232323;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-between;
+
 }
+
 .Menu a {
     text-decoration: none;
 }
-.Menu-titulo{
-    color: #eee;
-    font-size: 24px;
-    padding: 24px;
+
+.Menu-titulo {
+    color          : #eee;
+    font-size      : 24px;
+    padding        : 24px;
     text-decoration: none;
 
 }
-.Menu-item{
-    display:flex;
-    flex-direction: row;
+
+.Menu-item {
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
-    width: 75%;
-    
+    width          : 75%;
+
 }
-.Menu-item .menu-lista{
-    display:flex;
-    flex-direction: row;
+
+.Menu-item .menu-lista {
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
-    width: 100%;
+    width          : 100%;
 }
-.Menu-item .menu-lista li{
+
+.Menu-item .menu-lista li {
     list-style: none;
-    position: relative;
-    width: 100%;
+    position  : relative;
+    width     : 100%;
     align-self: center;
-    padding: 10px;
+    padding   : 10px;
 }
 
 
-.sub-menu{
-        position: absolute;
-        display: none;
-        flex-direction: column;
-        background: #232323;
-        z-index: 1;
-        width: 100%;
+.sub-menu {
+    position      : absolute;
+    display       : none;
+    flex-direction: column;
+    background    : #232323;
+    z-index       : 1;
+    width         : 100%;
 
 }
-.menu-lista li:hover .sub-menu{
 
-    display: flex;
+.menu-lista li:hover .sub-menu {
+
+    display       : flex;
     flex-direction: column;
 }
-.Menu-link{
-    color: #f0e8e8;
-    display: flex;
-    flex-direction: row;
+
+.Menu-link {
+    color          : #f0e8e8;
+    display        : flex;
+    flex-direction : row;
     justify-content: space-around;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.1s;
+    text-transform : uppercase;
+    transition     : 0.1s;
 }
 
-.Menu-link:hover{
+.Menu-link:hover {
     color: #1619c0;
 }
 
+.logo {
+    display      : flex;
+    width        : 50%;
+    align-content: center;
+    align-items  : center;
+    padding-left : 20px;
+
+}
+
+.logo img {
+    width : auto;
+    height: 50px;
+}

@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Tienda Blu
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Tienda Blu es un e-commerce de indumentaria deportiva desarrollado en React Js donde el usuario encontrara una seccion con todo nuestra ropa disponible o si asi lo desea en su categoria correspondiente.
+<br><br>
 
-## Available Scripts
+## [Link al Sitio Web](https://hard-rosario-proyecto.vercel.app/)
+## Demostración del Sitio Web
 
-In the project directory, you can run:
+<img src="./tiendaBluFinal.gif"/>
+<br><br>
 
-### `npm start`
+# Este e-commerce está construido con: 💻
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+⚪ Create-React-App (React Js)
+⚪ Firebase
+⚪ Estilos en CSS 
+⚪ Deploy en Vercel 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br><br>
 
-### `npm test`
+# Instalación para poder usarlo 📋
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1- Instalar las dependencias de React Js. 🔧
+<br>
 
-### `npm run build`
+〰️〰️〰️
+npm i
+〰️〰️〰️
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2- Iniciar el servidor. 🚀
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+〰️〰️〰️
+npm start
+〰️〰️〰️
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3- Disfrutar del Sitio Web. ✔️
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
 
-## Learn More
+# Creación del E-commerce 🛠️
+## Components:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### En la carpeta `components` vas a encontrar todos los componentes con los que se realizó el proyecto. Los componentes que se comunican con la base de datos de firebase son los siguientes:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **ItemListContainer:** Utiliza la funcion de firebase ( Services/firebase.js ) para renderizar todos los productos disponibles.
+<br>
 
-### Code Splitting
+* **ItemDetailContainer:** Utiliza la funcion de firebase ( Services/firebase.js ) para renderizar el producto seleccionado por el usuario, donde se muesta su descripcion,talle, cantidad de stock,precio y material del que esta hecho.
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* **Checkout:** Utilizan las funciones createOrder y getUserId de firebase( Services/firebase.js ) para crear la orden de los productos que compro el usuario y enviarla a la colección **orders** que está en firebase para asi poder generar el envio del producto.
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Context 📄
 
-### Making a Progressive Web App
+#### En la carpeta `context/CartContext.js` se encuentra toda la lógica con la que se desarrolló el carrito de compras y las funciones para remover, agregar, vaciar productos del carrito.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
+## Firebase 📄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### En la carpeta `Services/firebase.js` se encuentra toda la lógica con la que se desarrollaron las funciones para que aparezcan todos los productos, el producto seleccionado por el usuario, y tambien la función para crear una orden de compra con los datos del usuario y los productos que fueron comprados.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br>
 
-### `npm run build` fails to minify
+# Autor ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fernando Alarcon - 2021.

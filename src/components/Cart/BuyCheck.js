@@ -70,8 +70,6 @@ const BuyCheck = () => {
                                     `<h4>${nuevaOrden.items[0].nombre}</h4>` +
                                     `<b>Total: $${nuevaOrden.total}</b>` +
                                     `<p>Su orden de compra es <b>${res._key.path.segments[1]}</b></p>`,
-
-
                             })
                         })
 

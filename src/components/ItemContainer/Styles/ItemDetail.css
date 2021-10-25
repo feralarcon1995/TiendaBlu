@@ -134,3 +134,25 @@ select {
     color:#b3b3b3;
     font-size: 14px;
 }
+
+@media only screen and (min-width: 320px) and (max-width:480px){
+
+    .ItemDescripcion{
+        display: flex;
+        flex-direction: column;
+    }
+    .detallesContenedor{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .detalles{
+        width: 100%;
+    }
+    .ItemContainerDetail img{
+        width: 100%;
+    }
+    .itemContenedor{
+        width: 100%;
+    }
+}

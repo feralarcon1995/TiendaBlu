@@ -153,3 +153,18 @@
     border          : none;
     cursor          : pointer;
 }
+
+@media only screen and (min-width: 320px) and (max-width:480px){
+
+    .total-contenedor{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .total-contenedor p{
+        padding: 20px 0px;
+    }
+    .product-cart{
+        width: 100%;
+    }
+}
