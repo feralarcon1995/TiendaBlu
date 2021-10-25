@@ -3,7 +3,6 @@
 ### Tienda Blu es un e-commerce de indumentaria deportiva desarrollado en React Js donde el usuario encontrara una seccion con todo nuestra ropa disponible o si asi lo desea en su categoria correspondiente.
 <br><br>
 
-## [Link al Sitio Web](https://hard-rosario-proyecto.vercel.app/)
 ## Demostración del Sitio Web
 
 <img src="./tiendaBluFinal.gif"/>
