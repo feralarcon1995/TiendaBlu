@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/TiendaBlu/static/css/main.82ad23cc.chunk.css",
+    "main.js": "/TiendaBlu/static/js/main.8c0a1c0b.chunk.js",
+    "main.js.map": "/TiendaBlu/static/js/main.8c0a1c0b.chunk.js.map",
+    "runtime-main.js": "/TiendaBlu/static/js/runtime-main.b72df75c.js",
+    "runtime-main.js.map": "/TiendaBlu/static/js/runtime-main.b72df75c.js.map",
+    "static/css/2.ab75b8d7.chunk.css": "/TiendaBlu/static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.0ee3a53f.chunk.js": "/TiendaBlu/static/js/2.0ee3a53f.chunk.js",
+    "static/js/2.0ee3a53f.chunk.js.map": "/TiendaBlu/static/js/2.0ee3a53f.chunk.js.map",
+    "static/js/3.e2f51f68.chunk.js": "/TiendaBlu/static/js/3.e2f51f68.chunk.js",
+    "static/js/3.e2f51f68.chunk.js.map": "/TiendaBlu/static/js/3.e2f51f68.chunk.js.map",
+    "index.html": "/TiendaBlu/index.html",
+    "static/css/2.ab75b8d7.chunk.css.map": "/TiendaBlu/static/css/2.ab75b8d7.chunk.css.map",
+    "static/css/main.82ad23cc.chunk.css.map": "/TiendaBlu/static/css/main.82ad23cc.chunk.css.map",
+    "static/js/2.0ee3a53f.chunk.js.LICENSE.txt": "/TiendaBlu/static/js/2.0ee3a53f.chunk.js.LICENSE.txt",
+    "static/media/Check.css": "/TiendaBlu/static/media/form.046b6e1c.jpg",
+    "static/media/running.be508a81.jpg": "/TiendaBlu/static/media/running.be508a81.jpg",
+    "static/media/running2.510fdcb2.jpg": "/TiendaBlu/static/media/running2.510fdcb2.jpg",
+    "static/media/tb.151cc83d.png": "/TiendaBlu/static/media/tb.151cc83d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b72df75c.js",
+    "static/css/2.ab75b8d7.chunk.css",
+    "static/js/2.0ee3a53f.chunk.js",
+    "static/css/main.82ad23cc.chunk.css",
+    "static/js/main.8c0a1c0b.chunk.js"
+  ]
+}
